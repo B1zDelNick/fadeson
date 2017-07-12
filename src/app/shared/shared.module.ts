@@ -11,12 +11,15 @@ import {RouterModule} from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { SortByPipe } from './sort-by.pipe';
 
 @NgModule({
   declarations: [
     HeaderComponent,
     FooterComponent,
-    NavbarComponent],
+    NavbarComponent,
+    SortByPipe
+  ],
   imports: [
     CommonModule,
     RouterModule
@@ -25,7 +28,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     // CommonModule,
     HeaderComponent,
     FooterComponent,
-    NavbarComponent
+    NavbarComponent,
+    SortByPipe
   ],
 })
 export class SharedModule { }

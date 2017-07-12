@@ -13,7 +13,5 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
   }
 
-  isHome(): boolean {
-    return this.router.url === '/home';
-  }
+  isHome = () => this.router.url === '/home';
 }

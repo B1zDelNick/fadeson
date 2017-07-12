@@ -9,16 +9,34 @@
 
     <div class="collapse navbar-collapse" id="collapsingNavbar">
 
-      <ul class="navbar-nav">
-        <li class="nav-item" routerLinkActive="active">
-          <a class="nav-link " href="#" routerLink="/home">Home</a>
+      <ul class="navbar-nav" *ngIf="menuItems != null && menuItems.length > 0">
+
+        <li class="nav-item"
+            *ngFor="let mi of menuItems | sortBy:'order'; let i = index"
+            [ngClass]="{'dropdown': (mi.children && mi.children.length > 0)}"
+            routerLinkActive="active">
+
+          <a class="nav-link" href="#"
+             [routerLink]="['/' + mi.xfn]"
+             *ngIf="!mi.children"
+             [innerText]="mi.title">Page Name</a>
+
+          <a class="nav-link dropdown-toggle" href="#" [id]="'dropdownMenuLink' + i"
+             *ngIf="mi.children && mi.children.length > 0"
+             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+             [innerText]="mi.title">Page Name</a>
+
+          <div class="dropdown-menu"
+               [attr.aria-labelledby]="'dropdownMenuLink' + i"
+               *ngIf="mi.children && mi.children.length > 0">
+
+            <a class="dropdown-item nav-link" href="#"
+               *ngFor="let mi2 of mi.children | sortBy:'order'"
+               [innerText]="mi2.title">Action</a>
+
+          </div>
         </li>
-        <li class="nav-item" routerLinkActive="active">
-          <a class="nav-link " href="#" routerLink="/posts">Posts</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link page-scroll disabled" href="#">Examples</a>
-        </li>
+
       </ul>
 
       <ul class="nav navbar-nav ml-auto">
