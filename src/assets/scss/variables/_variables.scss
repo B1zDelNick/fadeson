@@ -9,15 +9,12 @@
 /*--------------------------------------------------------------
 ## Google Fonts
 --------------------------------------------------------------*/
-@import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,400i,700,700i|Kaushan+Script|Montserrat:400,700|Roboto+Slab:100,300,400,700&amp;subset=cyrillic,cyrillic-ext,latin-ext);
+@import url(https://fonts.googleapis.com/css?family=Kaushan+Script|Montserrat:700&amp;subset=cyrillic,cyrillic-ext,latin-ext);
 
 /*--------------------------------------------------------------
 ## Font vars
 --------------------------------------------------------------*/
-$droid_serif_font: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
-$montserrat_font: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-$kaushan_script_font: "Kaushan Script", "Helvetica Neue", Helvetica, Arial, cursive;
-$roboto-slab_font: "Roboto Slab", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$main-font: 'Montserrat','Helvetica Neue', Arial,sans-serif;
 
 /*--------------------------------------------------------------
 ## Gray and Brand Colors for use across theme
